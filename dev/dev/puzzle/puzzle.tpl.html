@@ -1,0 +1,34 @@
+<section class="setup">
+    Enter your name please:
+    <input type="text" #name (keyup.enter)="null">
+</section>
+<section class="puzzle" *ngIf="name.value" [ngClass]="{solved:
+switch1.value == switchOneNumber &&
+switch2.value == switchTwoNumber &&
+switch3.value == switchThreeNumber &&
+switch4.value == switchFourNumber }">
+    <h2 *ngIf="switch1.value == switchOneNumber &&
+        switch2.value == switchTwoNumber &&
+        switch3.value == switchThreeNumber &&
+        switch4.value == switchFourNumber">Success {{ name.value }}, you dit it!</h2>
+    <h2>
+        The Puzzle |
+        {{ switch1.value == switchOneNumber &&
+        switch2.value == switchTwoNumber &&
+        switch3.value == switchThreeNumber &&
+        switch4.value == switchFourNumber ? 'SOLVED' : 'NOT SOLVED' }}
+    </h2>
+    <p>Ok, welcome <span class="name">{{ name.value }}</span></p>
+    <br>
+    Code 1:
+    <input type="text" #switch1 (keyup)="(event)"><br>
+    Code 2:
+    <input type="text" #switch2 (keyup)="(event)"><br>
+    Code 3:
+    <input type="text" #switch3 (keyup)="(event)"><br>
+    Code 4:
+    <input type="text" #switch4 (keyup)="(event)"><br>
+    <pre>{{switch1.value}}{{switch2.value}}{{switch3.value}}{{switch4.value}}</pre>
+</section>
+
+
